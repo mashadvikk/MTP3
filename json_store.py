@@ -20,7 +20,7 @@ class JsonSerializer:
         >>> JsonSerializer.to_json(Movie("Девчата", 1961, "Чулюкин"))
         '{"title": "Девчата", "year": 1961, "director": "Чулюкин"}'
         """
-        return json.dumps(obj.to_dict())
+        return json.dumps(obj.to_dict(), ensure_ascii=False)
 
     @staticmethod
     def from_json(text, cls):
